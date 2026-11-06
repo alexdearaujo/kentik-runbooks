@@ -1,17 +1,47 @@
-# Redundancy Analysis Report
+# Redundancy analysis report
 
-Following the redundancy rules listed, generate a report with WAN sites that have redundancy risk. The report should list three sections:
+<!--
+CUSTOMIZE BEFORE USE: replace every {{PLACEHOLDER}} with your own naming, then delete this comment.
+{{WAN_IFACE_TAG}}   Interface description tag for WAN circuits (example: wan_iface)
+{{INET_IFACE_TAG}}  Interface description tag for internet circuits (example: inet_iface)
+-->
 
-## Section 1: Summary
+**Trigger:** User asks for the WAN site redundancy report.
 
-Number of sites that are at critical risk. Number of sites that are at warning risk. Number of sites that are healthy. Using icons for each to make the report more visual. Have it as a table where the first column is the title, second column is the number this week with an indicator of trend, third column is last week.
+Follow the redundancy rules below and generate a report of the WAN sites that have redundancy risk.
 
-Next place a site risk report table for all sites. The site table should contain the site name, risk level, the risk category (redundancy) , the reason, and a next action. Under the next action column add an indicator for whether executive action is required.
+## Site types
 
-## Section 2: Details
+- **Standard site (single router):** 1 router with 2 physical connections, typically one {{INET_IFACE_TAG}} interface
+  and one {{WAN_IFACE_TAG}} interface.
+- **Dual-homed site (multi-router):** 2 routers, each with 1 connection. One device has the {{INET_IFACE_TAG}}
+  interface and the other device has the {{WAN_IFACE_TAG}} interface.
 
-This out a table with sites, the interfaces involved and whether the lack of redundancy is due to a recent change in the past week. Either a traffic increase or a link going down.
+## Redundancy rules
 
-## Section 3: Evidence
+- **Redundancy rule:** Only one interface is active, or the secondary interface has no "up" status. List the reason
+  as the site having only one connection or a down interface as the primary reason if that is the case.
+- **Redundant capacity rule:** If one connection exceeds 40% utilization, the site is at risk if a failover event
+  would push the remaining link to 80% or more.
 
-List a table of all circuits with issues and link to a query with the evidence that can be clicked on.
+## Report format
+
+Break the report into three sections.
+
+### Section 1: Summary
+
+- Show the number of sites at critical risk, at warning risk, and healthy. Use an icon for each to make the report
+  more visual. Show it as a table: the first column is the title, the second column is the number this week with a
+  trend indicator, the third column is last week.
+- Next, show a site risk table for all sites. The table contains the site name, risk level, risk category
+  (redundancy), the reason, and a next action. In the next action column, add an indicator for whether executive
+  action is required.
+
+### Section 2: Details
+
+- Show a table of sites, the interfaces involved, and whether the lack of redundancy is due to a change in the past
+  week: either a traffic increase or a link going down.
+
+### Section 3: Evidence
+
+- Show a table of all circuits with issues, each with a clickable link to a query with the evidence.
