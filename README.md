@@ -60,21 +60,14 @@ grep -n '{{' *.md
 
 ## Contributing
 
-1. Create a branch, for example `docs/add-device-down-runbook`.
-2. Name the file after the trigger in kebab case, for example `device-down.md`.
-3. Start the file with a title and a `**Trigger:**` line.
-4. Put each network-specific name in a `{{PLACEHOLDER}}` and list it in a `CUSTOMIZE BEFORE USE` comment.
-5. Keep each runbook self-contained. The assistant reads one runbook at a time, so it cannot follow a link to the
-   rules in another runbook.
-6. Add the runbook to the table in [Runbooks](#runbooks).
-7. Lint the files with [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2). The rules are in
-   [.markdownlint.jsonc](.markdownlint.jsonc).
+Read [CONTRIBUTING.md](CONTRIBUTING.md). It has the runbook template, the writing rules, and the checks. AI coding
+agents read the same rules from [AGENTS.md](AGENTS.md).
 
-   ```sh
-   npx markdownlint-cli2 '*.md'
-   ```
+Run the checks before you open a pull request:
 
-8. Open a pull request.
+```sh
+./scripts/check.sh
+```
 
 ## License
 
