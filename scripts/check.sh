@@ -8,7 +8,7 @@ fail() {
   failed=1
 }
 
-npx --yes markdownlint-cli2 '*.md' || failed=1
+npx --yes markdownlint-cli2 '*.md' '.github/**/*.md' || failed=1
 
 for file in *.md; do
   case "$file" in
