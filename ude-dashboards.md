@@ -83,11 +83,11 @@ All measurements: `test_id`, `src_agent`, `src_agent_site_id`, `src_agent_asn`, 
 
 ### Dashboard build order
 
-- Default: ONE create call. Put every section BEFORE its children. `parent_panel_id` = the 0-based index of the
-  section in the same panels array, as a string. The parent must be a top-level section (no `parent_panel_id`). Never
-  nest a section in a section.
+- Put every section BEFORE its children. `parent_panel_id` = the 0-based index of the section in the same panels
+  array, as a string. The parent must be a top-level section (no `parent_panel_id`). Never nest a section in a
+  section.
 - Count indexes from 0. Re-check each child's index against the panels array before sending.
-- Variables go in the same call; `variableMappings` must use exact variable names. Guided variables auto-map; custom
+- Variables go in the first create call; `variableMappings` must use exact variable names. Guided variables auto-map; custom
   variables need explicit `variableMappings` on every UDE panel.
 - `add_panels` cannot attach to an existing section by real ID. To add to an existing section: `add_panels` with no
   parent, then `update_panels` with `parent_panel_id` = real integer ID (from `describe_board`).
