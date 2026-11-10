@@ -17,6 +17,7 @@ answer. A network engineer can also follow a runbook by hand.
 | [src-ip-troubleshooting.md](src-ip-troubleshooting.md) | A user gives a source IP and asks to trace or check its path. | 4 |
 | [capacity-planning.md](capacity-planning.md) | You need a weekly capacity report for all sites. | 8 |
 | [site-redundancy-analysis.md](site-redundancy-analysis.md) | You need a report of WAN sites with redundancy risk. | 2 |
+| [ude-dashboards.md](ude-dashboards.md) | A user asks to build a dashboard on an account with UDE enabled. | None |
 
 ## Data sources
 
