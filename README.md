@@ -5,6 +5,10 @@ Network troubleshooting runbooks for an AI assistant that can query Kentik data,
 Each runbook is a Markdown prompt. It tells the assistant which checks to run, in which order, and how to format the
 answer. A network engineer can also follow a runbook by hand.
 
+> [!IMPORTANT]
+> This is not an official Kentik product. The Kentik product team does not support it. The Kentik Professional
+> Services team wrote the first runbooks. Anyone can add a runbook. See [Contributing](#contributing).
+
 ## Runbooks
 
 | Runbook | Use it when | Placeholders |
